@@ -8,10 +8,10 @@ php artisan migrate
 ### Middleware
 Add LastUserActivity middleware to middleware array in *app/Http/Kernel.php*:
 ```php
-  protected $middleware = [
-        …
-        \Atin\LaravelUserOnline\Http\Middleware\LastUserActivity::class,
-    ];
+protected $middleware = [
+    …
+    \Atin\LaravelUserOnline\Http\Middleware\LastUserActivity::class,
+];
 ```
 
 ### Trait
