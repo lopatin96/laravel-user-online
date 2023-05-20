@@ -26,6 +26,15 @@ class User extends Authenticatable
     use HasOnline, …
 ```
 
+don't forget to cast last_seen_at property to datetime in your User model:
+
+```php  
+protected $casts = [
+    …
+    'last_seen_at' => 'datetime',
+];
+```
+
 and then you can check the online status:
 
 ```php
