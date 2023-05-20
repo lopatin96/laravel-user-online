@@ -1,11 +1,11 @@
 <?php
 
-namespace Atin\LaravelLangSwitcher\Traits;
+namespace Atin\LaravelUserOnline\Traits;
 
 trait HasOnline
 {
-    public function online(): bool
+    public function isOnline(): bool
     {
-        return $this->last_seen_at ? $this->last_seen_at->diffInDays(now()) <= config('laravel-user-online.ttl') : false;
+        return $this->last_seen_at ? $this->last_seen_at->diffInSeconds(now()) <= config('laravel-user-online.ttl') : false;
     }
 }

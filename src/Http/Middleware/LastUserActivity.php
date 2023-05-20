@@ -15,7 +15,7 @@ class LastUserActivity
             && cache()->add('users.online.' . auth()->user()->id, true, now()->addSeconds(config('laravel-user-online.ttl')))
         ) {
             auth()->user()->last_seen_at = now();
-            auth()->save();
+            auth()->user()->save();
         }
 
         return $next($request);
